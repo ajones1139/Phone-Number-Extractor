@@ -66,10 +66,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-import re         # Import regex module for pattern matching
-import sys        # Import sys to access command-line arguments
-import os         # Import os to check file existence
-
 # Define a regex pattern to match phone numbers with various formats
 phone_pattern = re.compile(r'''
     (\+?\d{1,2}[\s-]?)?        # Optional country code, e.g. +1 or 44, followed by space or dash
