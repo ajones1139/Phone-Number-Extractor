@@ -13,6 +13,6 @@ How to compile patterns and apply them across multiline files
 The value of tools like regex101 for testing and debugging
 
 🚧 Future Plans
-Expand pattern matching to include emails and other structured data
+Expand pattern matching to include emails and other structured data &
 Build a simple GUI for non-technical users to extract text-based data
 Potentially wrap the tool in a web app or lightweight CLI
