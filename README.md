@@ -20,7 +20,7 @@ As I’ve grown more skilled with web scraping, scripting, and cybersecurity sim
 ## 🧠 What I Learned
 
 - How to build flexible regex patterns to handle multiple phone number formats  
-- How to use escape characters like `\s`, `+`, and others correctly  
+- How to use escape characters like `\s`, `+`, and other special cases more efficiently
 - How to compile regex patterns and apply them to multiline text inputs  
 - How to structure reusable code with functions and conditional logic for clean, maintainable scripts  
 - The value of tools like [regex101](https://regex101.com) for testing and debugging patterns  
