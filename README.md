@@ -33,3 +33,15 @@ As I’ve grown more skilled with web scraping, scripting, and cybersecurity sim
 Ideal for data cleanup, lead generation, and content parsing — this tool quickly extracts phone numbers from raw text, making it useful for businesses, marketers, and analysts who need accurate contact information without manual work.
 
 ---
+
+## 📂 Example Input & Output
+
+To try the script quickly, use the included sample files:
+
+- `sample_input.txt`: Example text containing various phone number formats  
+- `sample_output.txt`: Expected extracted phone numbers and their classified types
+
+Run the script with the sample input file:
+
+```bash
+python3 phone_number_extractor.py --file sample_input.txt
