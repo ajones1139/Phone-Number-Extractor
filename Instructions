@@ -9,15 +9,15 @@
 
 2. **Run the script with a text file:**
 
-    If you have a `.txt` file with your input text, run:
+    If you have a `.txt` file containing your input text, run:
 
     ```bash
-    python3 phone_number_extractor.py path/to/yourfile.txt
+    python3 phone_number_extractor.py --file path/to/yourfile.txt
     ```
 
 3. **Or run and paste text directly:**
 
-    Run without arguments:
+    Run without any arguments:
 
     ```bash
     python3 phone_number_extractor.py
@@ -45,4 +45,4 @@
 
 ---
 
-Feel free to explore the code and suggest improvements!  
+Feel free to explore the code and suggest improvements!
