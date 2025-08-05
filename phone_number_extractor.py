@@ -1,3 +1,71 @@
+import re
+import argparse
+import os
+import sys
+
+# Default phone number pattern
+PHONE_PATTERN = r'(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\d{3}\)|\d{3})(?:[.-]?\s*)?)?\d{3}(?:[.-]?\s*)?\d{4}'
+
+def extract_phone_numbers(text):
+    return re.findall(PHONE_PATTERN, text)
+
+def get_text_input():
+    print("Paste your text below (finish input with an empty line):")
+    lines = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        if line.strip() == "":
+            break
+        lines.append(line)
+    return "\n".join(lines)
+
+def main():
+    parser = argparse.ArgumentParser(description="Extract phone numbers from text or a file.")
+    parser.add_argument('--file', '-f', type=str, help="Path to input text file")
+    parser.add_argument('--output', '-o', type=str, help="Path to save extracted phone numbers")
+
+    args = parser.parse_args()
+
+    # Read input text
+    if args.file:
+        if not os.path.isfile(args.file):
+            print(f"[!] File not found: {args.file}")
+            sys.exit(1)
+        try:
+            with open(args.file, 'r', encoding='utf-8') as f:
+                text = f.read()
+        except Exception as e:
+            print(f"[!] Failed to read file: {e}")
+            sys.exit(1)
+    else:
+        text = get_text_input()
+
+    # Extract phone numbers
+    phone_numbers = extract_phone_numbers(text)
+
+    # Display results
+    if phone_numbers:
+        print("\nExtracted Phone Numbers:")
+        for number in phone_numbers:
+            print(f" - {number}")
+    else:
+        print("\nNo phone numbers found.")
+
+    # Save output if requested
+    if args.output:
+        try:
+            with open(args.output, 'w', encoding='utf-8') as f:
+                for number in phone_numbers:
+                    f.write(number + '\n')
+            print(f"\n[+] Saved {len(phone_numbers)} phone number(s) to {args.output}")
+        except Exception as e:
+            print(f"[!] Failed to save output: {e}")
+
+if __name__ == "__main__":
+    main()
 import re         # Import regex module for pattern matching
 import sys        # Import sys to access command-line arguments
 import os         # Import os to check file existence
