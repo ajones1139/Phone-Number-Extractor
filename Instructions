@@ -1,10 +1,48 @@
 ## 🚀 How to Run
 
-1. Clone the repository:
+1. **Clone the repository:**
 
-```bash
-git clone https://github.com/your-username/phone-extractor.git
-cd phone-extractor
+    ```bash
+    git clone https://github.com/your-username/phone-extractor.git
+    cd phone-extractor
+    ```
 
-2. Run the extraction script:
-python3 extractor.py
+2. **Run the script with a text file:**
+
+    If you have a `.txt` file with your input text, run:
+
+    ```bash
+    python3 phone_number_extractor.py path/to/yourfile.txt
+    ```
+
+3. **Or run and paste text directly:**
+
+    Run without arguments:
+
+    ```bash
+    python3 phone_number_extractor.py
+    ```
+
+    Then paste or type your text input directly into the terminal.  
+    When finished, enter a blank line to signal the end of input.
+
+---
+
+## 📄 What the Script Does
+
+- Uses a **regex pattern** to identify phone numbers with optional country codes, area codes (with or without parentheses), various separators (spaces, dashes, dots), and optional extensions  
+- Extracts phone numbers from the provided text (from a file or pasted input)  
+- Determines the type of phone number (e.g., Toll-Free, International, With Extension, Legacy, or Standard) based on pattern matching and nearby context  
+- Prints all extracted phone numbers along with their classified types  
+
+---
+
+## 🛠 Code Structure Highlights
+
+- Uses **functions** (`extract_phone_numbers` and `identify_type`) to organize reusable logic  
+- Employs **conditional statements** to handle different input sources (file or pasted text)  
+- Includes helpful **comments** to make the code accessible and easy to understand  
+
+---
+
+Feel free to explore the code and suggest improvements!  
